@@ -9,7 +9,7 @@ mnist = input_data.read_data_sets("/tmp/data/", one_hot = True)
 # hyperparameters.
 n_classes = 10
 batch_size = 128
-
+loss_trace = []
 
 
 # declaring placeholders.
@@ -65,7 +65,6 @@ def train_neural_network(x):
     
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
-        loss_trace = []
         
         for epoch in range(hm_epochs):
             epoch_loss = 0
